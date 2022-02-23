@@ -25,15 +25,14 @@ public class DracoVirtualControllerUI : MonoBehaviour
     public Image _mImageSelect = null;
     public Image _mImageStart = null;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float _mDeadZone = 0.2f;
 
     // Update is called once per frame
     void Update()
     {
-        
+        bool a = Input.GetButton("Fire1");
+        float lt = Input.GetAxis("Fire1");
+        _mImageA.enabled = a;
+        _mImageLeftTrigger.enabled = Mathf.Abs(lt) >= _mDeadZone;
     }
 }
