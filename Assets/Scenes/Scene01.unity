@@ -741,7 +741,7 @@ RectTransform:
   m_Children:
   - {fileID: 2011475890}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -823,6 +823,68 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 539433772}
   m_CullTransparentMesh: 1
+--- !u!1 &608638617
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 608638619}
+  - component: {fileID: 608638618}
+  m_Layer: 0
+  m_Name: DracoVirtualControllerUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &608638618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608638617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 819eda2004fbe274aabe7b600e1e899b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mImageA: {fileID: 1928420221}
+  _mImageB: {fileID: 362020473}
+  _mImageX: {fileID: 971929204}
+  _mImageY: {fileID: 84024649}
+  _mImageDpadDown: {fileID: 2133495052}
+  _mImageDpadLeft: {fileID: 539433774}
+  _mImageDpadRight: {fileID: 1495531343}
+  _mImageDpadUp: {fileID: 1959118695}
+  _mImageLeftBumper: {fileID: 438362802}
+  _mImageLeftStick: {fileID: 276620107}
+  _mImageLeftThumb: {fileID: 23089358}
+  _mImageLeftTrigger: {fileID: 1986431015}
+  _mImageRightBumper: {fileID: 877740339}
+  _mImageRightStick: {fileID: 383755110}
+  _mImageRightThumb: {fileID: 921609084}
+  _mImageRightTrigger: {fileID: 1619596171}
+  _mImageTap: {fileID: 2100444392}
+  _mImageSelect: {fileID: 163599313}
+  _mImageStart: {fileID: 2059756172}
+--- !u!4 &608638619
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608638617}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1288,7 +1350,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1495531341
 GameObject:
