@@ -77,10 +77,16 @@ public class DracoVirtualControllerUI : MonoBehaviour
         _mImageRightStick.transform.localPosition = newRight;
         _mImageRightThumb.transform.localPosition = newRight;
 
-        Touchscreen touch = Touchscreen.current;
-        if (touch != null)
+        bool touchDetected = false;
+        InputDevice[] touches = InputSystem.devices.ToArray();
+        foreach (InputDevice touch in touches)
         {
-            _mImageTap.enabled = touch.IsPressed();
-        }        
+            if (touch.IsPressed())
+            {
+                touchDetected = true;
+                break;
+            }
+        }
+        _mImageTap.enabled = touchDetected;
     }
 }
