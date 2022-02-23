@@ -80,7 +80,7 @@ public class DracoVirtualControllerUI : MonoBehaviour
         Touchscreen touch = Touchscreen.current;
         if (touch != null)
         {
-            _mImageTap.enabled = touch.touches.Count > 0;
+            _mImageTap.enabled = touch.IsPressed();
         }        
     }
 }
