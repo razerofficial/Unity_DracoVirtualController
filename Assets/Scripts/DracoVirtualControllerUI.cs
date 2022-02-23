@@ -27,6 +27,12 @@ public class DracoVirtualControllerUI : MonoBehaviour
 
     private float _mDeadZone = 0.15f;
 
+    void Awake()
+    {
+        EnhancedTouchSupport.Enable();
+        TouchSimulation.Enable();
+    }
+
     void FixedUpdate()
     {
         Gamepad gamepad = Gamepad.current;
@@ -78,15 +84,42 @@ public class DracoVirtualControllerUI : MonoBehaviour
         _mImageRightThumb.transform.localPosition = newRight;
 
         bool touchDetected = false;
-        InputDevice[] touches = InputSystem.devices.ToArray();
-        foreach (InputDevice touch in touches)
+
+        // doesn't work..
+        /*
+        Touchscreen touchscreen = Touchscreen.current;
+        if (touchscreen != null)
         {
-            if (touch.IsPressed())
+            if (touchscreen.IsPressed())
+            {
+                touchDetected = true;
+            }
+        }
+        */
+
+        // doesn't work
+        /*
+        InputDevice[] devices = InputSystem.devices.ToArray();
+        foreach (InputDevice device in devices)
+        {
+            if (device.IsPressed())
             {
                 touchDetected = true;
                 break;
             }
         }
+        */
+
+        UnityEngine.InputSystem.EnhancedTouch.Touch[] activeTouches = UnityEngine.InputSystem.EnhancedTouch.Touch.activeTouches.ToArray();
+        foreach (UnityEngine.InputSystem.EnhancedTouch.Touch touch in activeTouches)
+        {
+            if (touch.isInProgress)
+            {
+                touchDetected = true;
+                break;
+            }
+        }
+
         _mImageTap.enabled = touchDetected;
     }
 }
