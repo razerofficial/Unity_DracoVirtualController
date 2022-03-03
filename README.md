@@ -4,6 +4,8 @@
 
 ![image_1](images/image_1.png)
 
+* This sample project uses the LTS version: `Unity 2020.3.29f1`
+
 * This sample uses the new [Unity Input System](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/manual/QuickStartGuide.html) from the Unity Package manager.
 
 ![image_3](images/image_3.png)
