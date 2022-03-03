@@ -41,6 +41,7 @@ public class DracoVirtualControllerUI : MonoBehaviour
             return; // No gamepad connected.
         }
 
+        //buttons
         _mImageA.enabled = gamepad.aButton.isPressed;
         _mImageB.enabled = gamepad.bButton.isPressed;
         _mImageX.enabled = gamepad.xButton.isPressed;
@@ -51,14 +52,14 @@ public class DracoVirtualControllerUI : MonoBehaviour
         _mImageDpadUp.enabled = gamepad.dpad.up.isPressed;
         _mImageLeftBumper.enabled = gamepad.leftShoulder.isPressed;
         _mImageLeftThumb.enabled = gamepad.leftStickButton.isPressed;
-        //_mImageLeftTrigger.enabled = gamepad.leftTrigger.isPressed;
-        _mImageLeftTrigger.enabled = Mathf.Abs(gamepad.leftTrigger.ReadValue()) >= _mDeadZone;
         _mImageRightBumper.enabled = gamepad.rightShoulder.isPressed;
         _mImageRightThumb.enabled = gamepad.rightStickButton.isPressed;
-        //_mImageRightTrigger.enabled = gamepad.rightTrigger.isPressed;
-        _mImageRightTrigger.enabled = Mathf.Abs(gamepad.rightTrigger.ReadValue()) >= _mDeadZone;
         _mImageSelect.enabled = gamepad.selectButton.isPressed;
         _mImageStart.enabled = gamepad.startButton.isPressed;
+
+        //axises
+        _mImageLeftTrigger.enabled = Mathf.Abs(gamepad.leftTrigger.ReadValue()) >= _mDeadZone;
+        _mImageRightTrigger.enabled = Mathf.Abs(gamepad.rightTrigger.ReadValue()) >= _mDeadZone;
 
         const float rotDegrees = 165f;
         const float rotRadians = rotDegrees / 180f * Mathf.PI;
@@ -83,33 +84,8 @@ public class DracoVirtualControllerUI : MonoBehaviour
         _mImageRightStick.transform.localPosition = newRight;
         _mImageRightThumb.transform.localPosition = newRight;
 
+        // touch
         bool touchDetected = false;
-
-        // doesn't work..
-        /*
-        Touchscreen touchscreen = Touchscreen.current;
-        if (touchscreen != null)
-        {
-            if (touchscreen.IsPressed())
-            {
-                touchDetected = true;
-            }
-        }
-        */
-
-        // doesn't work
-        /*
-        InputDevice[] devices = InputSystem.devices.ToArray();
-        foreach (InputDevice device in devices)
-        {
-            if (device.IsPressed())
-            {
-                touchDetected = true;
-                break;
-            }
-        }
-        */
-
         UnityEngine.InputSystem.EnhancedTouch.Touch[] activeTouches = UnityEngine.InputSystem.EnhancedTouch.Touch.activeTouches.ToArray();
         foreach (UnityEngine.InputSystem.EnhancedTouch.Touch touch in activeTouches)
         {
